@@ -1,0 +1,54 @@
+.container {
+  padding: 2rem;
+  background-color: #0d1117;
+  min-height: 100vh;
+  color: #c9d1d9;
+  font-family: sans-serif;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th {
+  background-color: #21262d;
+  padding: 12px;
+  border-bottom: 1px solid #30363d;
+  color: #8b949e;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #30363d;
+}
+
+.btnEdit {
+  background: #238636;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.btnDelete {
+  background: #da3633;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btnDelete:hover { background: #f85149; }

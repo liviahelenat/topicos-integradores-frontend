@@ -61,12 +61,3 @@ O frontend foi desenvolvido como uma **SPA (Single Page Application)** utilizand
 
 
 
----
-
-### Dica para o grupo:
-Para atualizar o GitHub com este ficheiro:
-1. Salva o ficheiro como `README.md`.
-2. No terminal:
-   - `git add README.md`
-   - `git commit -m "docs: adiciona documentação técnica ao readme"`
-   - `git push`

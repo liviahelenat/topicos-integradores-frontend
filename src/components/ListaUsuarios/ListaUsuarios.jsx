@@ -12,13 +12,13 @@ export default function ListaUsuarios() {
     try {
       const response = await api.getUsuarios();
       const data = await response.json();
-      setUsuarios(data);
+      setUsuarios(data.content || []);
     } catch (error) {
       console.error("Aguardando conexão com o servidor na VM...");
       // Opcional: manter dados mockados apenas para teste visual enquanto a VM não sobe
       setUsuarios([
-        { id: 1, nome: 'Admin (Mock)', email: 'admin@projeto.com' },
-        { id: 2, nome: 'Usuário (Mock)', email: 'user@projeto.com' },
+        { id: 1, name: 'Admin (Mock)', email: 'admin@projeto.com' },
+        { id: 2, name: 'Usuário (Mock)', email: 'user@projeto.com' },
       ]);
     } finally {
       setLoading(false);
@@ -64,7 +64,7 @@ export default function ListaUsuarios() {
               usuarios.map(user => (
                 <tr key={user.id}>
                   <td>{user.id}</td>
-                  <td>{user.nome}</td>
+                  <td>{user.name}</td>
                   <td>{user.email}</td>
                   <td>
                     <button className={styles.btnEdit}>Alterar</button>

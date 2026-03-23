@@ -15,7 +15,7 @@ export default function Login() {
 
     try {
       // Chamada real preparada para a VM
-      const response = await api.login({ email, password });
+      const response = await api.login({ email, senha: password });
 
       if (response.ok) {
         // Se o backend confirmar o login (Status 200)

@@ -5,27 +5,28 @@ import ListaUsuarios from './components/ListaUsuarios/ListaUsuarios';
 
 function App() {
   return (
-    <div>
-      {/* Menu de Navegação Temporário (Útil para o desenvolvimento) */}
-      <nav style={{ 
-        padding: '10px', 
-        background: '#161b22', 
-        borderBottom: '1px solid #30363d',
-        display: 'flex',
-        gap: '15px' 
-      }}>
-        <Link to="/" style={{ color: '#58a6ff', textDecoration: 'none' }}>Login</Link>
-        <Link to="/cadastro" style={{ color: '#58a6ff', textDecoration: 'none' }}>Cadastro</Link>
-        <Link to="/usuarios" style={{ color: '#58a6ff', textDecoration: 'none' }}>Gestão (Admin)</Link>
+    <>
+      {/* Barra de Navegação Padronizada */}
+      <nav className="navbar">
+        <div className="navbar-content">
+          <div className="logo"> INFRA-SEC</div>
+          <div className="nav-links">
+            <Link to="/">Login</Link>
+            <Link to="/cadastro">Cadastro</Link>
+            <Link to="/usuarios" className="admin-link">Gestão (Admin)</Link>
+          </div>
+        </div>
       </nav>
 
-      {/* Definição das Rotas */}
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/usuarios" element={<ListaUsuarios />} />
-      </Routes>
-    </div>
+      {/* Onde as telas (Login, Cadastro, Lista) aparecem */}
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/usuarios" element={<ListaUsuarios />} />
+        </Routes>
+      </main>
+    </>
   );
 }
 

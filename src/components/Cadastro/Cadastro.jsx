@@ -9,14 +9,15 @@ export default function Cadastro() {
   const [checks, setChecks] = useState({ length: false, upper: false, number: false });
   const [loading, setLoading] = useState(false); // Adicionado para feedback visual
 
-  useEffect(() => {
-    const pwd = userData.password;
-    setChecks({
-      length: pwd.length >= 8,
-      upper: /[A-Z]/.test(pwd),
-      number: /[0-9!@#$%^&*]/.test(pwd)
-    });
-  }, [userData.password]);
+  
+useEffect(() => {
+  const pwd = userData.password;
+  setChecks({
+    length: pwd.length >= 8,
+    upper: /[A-Z]/.test(pwd),
+    number: /[0-9]/.test(pwd) 
+  });
+}, [userData.password]);
 
   const isFormValid = checks.length && checks.upper && checks.number && userData.name && userData.email;
 

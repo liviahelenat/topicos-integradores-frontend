@@ -5,7 +5,7 @@ import styles from './Cadastro.module.css';
 
 export default function Cadastro() {
   const navigate = useNavigate();
-  const [userData, setUserData] = useState({ nome: '', email: '', password: '' });
+  const [userData, setUserData] = useState({ name: '', email: '', password: '' });
   const [checks, setChecks] = useState({ length: false, upper: false, number: false });
   const [loading, setLoading] = useState(false); // Adicionado para feedback visual
 
@@ -18,7 +18,7 @@ export default function Cadastro() {
     });
   }, [userData.password]);
 
-  const isFormValid = checks.length && checks.upper && checks.number && userData.nome && userData.email;
+  const isFormValid = checks.length && checks.upper && checks.number && userData.name && userData.email;
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -54,7 +54,7 @@ export default function Cadastro() {
               className={styles.input} 
               required 
               disabled={loading}
-              onChange={e => setUserData({...userData, nome: e.target.value})} 
+              onChange={e => setUserData({...userData, name: e.target.value})} 
             />
           </div>
 
